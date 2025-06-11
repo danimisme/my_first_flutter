@@ -20,68 +20,40 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+        body: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
           children: [
             Container(
-              width: 100,
-              height: 100,
               color: Colors.amber,
-              child: Center(child: Text("Hallo"))
             ),
             Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(child: Text("Hallo"))
-            ),
-            Container(
-              width: 100,
-              height: 100,
               color: Colors.red,
-              child: Center(child: Text("Hallo"))
             ),
             Container(
-              width: 100,
-              height: 100,
+              color: Colors.blue,
+            ),
+            Container(
+              color: Colors.pink,
+            ),
+            Container(
               color: Colors.amber,
-              child: Center(child: Text("Hallo"))
             ),
             Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(child: Text("Hallo"))
-            ),
-            Container(
-              width: 100,
-              height: 100,
               color: Colors.red,
-              child: Center(child: Text("Hallo"))
             ),
             Container(
-              width: 100,
-              height: 100,
-              color: Colors.amber,
-              child: Center(child: Text("Hallo"))
+              color: Colors.blue,
             ),
             Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(child: Text("Hallo"))
+              color: Colors.pink,
             ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              child: Center(child: Text("Hallo"))
-            )
-          ],
-        ),
+            
+          ]
         )
-
       )
     );
   }
