@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         body: SingleChildScrollView(
-          child: Column(
+          scrollDirection: Axis.horizontal,
+          child: Row(
           children: [
             Container(
               width: 100,
