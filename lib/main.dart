@@ -33,17 +33,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("My Application", style: TextStyle(color: Colors.white)), backgroundColor: Colors.blue),
-        body: ListView.builder(
-          itemCount: 30,
-          itemBuilder: (context, index) => KotakWarna(
-          text: "kotak ke-$index",
-          warna: Color.fromARGB(
-            255,
-            100 + Random().nextInt(200), // Random red value
-            100 + Random().nextInt(200), // Random green value
-            100 + Random().nextInt(200)  // Random blue value
+        body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemCount: 50,
+          itemBuilder: (context, index) => Container(
+            color: Color.fromARGB(255, 
+            60+ Random().nextInt(256),
+            60+ Random().nextInt(256),
+            60+ Random().nextInt(256)),
           )
-        )
         ),
       )
     );
