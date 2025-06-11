@@ -21,6 +21,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         body: GridView(
+          padding: EdgeInsets.only(
+            top: 20,
+            left: 20,
+            right: 20,
+            bottom: 20,
+          ),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             crossAxisSpacing: 10,
