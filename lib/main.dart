@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
             crossAxisCount: 3,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
+            childAspectRatio: 1/2,
           ),
           children: [
             Container(
