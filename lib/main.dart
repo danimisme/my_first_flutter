@@ -15,13 +15,12 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
         body: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.blue,
-            child: Center(child: Text("Hello World"))
-          )
-        ),
+          child: ElevatedButton(
+            onPressed: (){
+              print("Tombol Ditekan");
+            }, 
+            child: Text("Klik Disini")),
+        )
       )
     );
   }
