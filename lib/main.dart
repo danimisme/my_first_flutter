@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Column(
+        body: Row(
           children: [
             Container(
               width: 100,
