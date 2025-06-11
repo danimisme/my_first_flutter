@@ -20,24 +20,24 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Row(
+        body: Stack(
           children: [
             Container(
-              width: 100,
-              height: 100,
+              width: 200,
+              height: 200,
               color: Colors.amber,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.green,
               child: Center(child: Text("Hallo"))
             ),
             Container(
               width: 100,
               height: 100,
               color: Colors.red,
-              child: Center(child: Text("Hallo"))
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.blue,
               child: Center(child: Text("Hallo"))
             )
           ],
