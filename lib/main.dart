@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
    )));
 
    List<Map<String, dynamic>> data = List.generate(10, (index) => {
-    "text": "Kotak ke-$index",
+    "text": "Kontak ke-$index",
     "warna": Color.fromARGB(
         255,
-        200 + Random().nextInt(256), // Random red value
-        200 + Random().nextInt(256), // Random green value
-        200 + Random().nextInt(256)  // Random blue value
+        100 + Random().nextInt(256), // Random red value
+        100 + Random().nextInt(256), // Random green value
+        100 + Random().nextInt(256)  // Random blue value
       )
     }
   );
@@ -33,11 +33,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("My Application", style: TextStyle(color: Colors.white)), backgroundColor: Colors.blue),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: data.map((e) => KotakWarna(text: e["text"], warna: e["warna"])).toList()
-          ),
+        body: ListView.builder(
+          itemCount: 30,
+          itemBuilder: (context, index) => KotakWarna(
+          text: "kotak ke-$index",
+          warna: Color.fromARGB(
+            255,
+            100 + Random().nextInt(200), // Random red value
+            100 + Random().nextInt(200), // Random green value
+            100 + Random().nextInt(200)  // Random blue value
+          )
+        )
         ),
       )
     );
