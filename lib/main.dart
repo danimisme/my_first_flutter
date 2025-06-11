@@ -15,7 +15,11 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
         body: Center(
-          child: Icon(Icons.home, size: 200, color: Colors.blue),
+          // Image Provider :
+          // 1. Asset Image
+          // --> gambar yang ada pada folder project
+          // --> perlu daftar di pubspec.yaml
+          child: Image(image: AssetImage("assets/unnamed.png") ),
         )
       )
     );
