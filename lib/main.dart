@@ -15,11 +15,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: (){
-              print("Tombol Ditekan");
-            }, 
-            child: Text("Klik Disini")),
+          child: Icon(Icons.home, size: 200, color: Colors.blue),
         )
       )
     );
