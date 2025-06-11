@@ -20,17 +20,54 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Stack(
+        body: SingleChildScrollView(
+          child: Column(
           children: [
             Container(
-              width: 200,
-              height: 200,
+              width: 100,
+              height: 100,
               color: Colors.amber,
               child: Center(child: Text("Hallo"))
             ),
             Container(
-              width: 150,
-              height: 150,
+              width: 100,
+              height: 100,
+              color: Colors.green,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+              child: Center(child: Text("Hallo"))
+            ),
+            Container(
+              width: 100,
+              height: 100,
               color: Colors.green,
               child: Center(child: Text("Hallo"))
             ),
@@ -41,6 +78,7 @@ class MyApp extends StatelessWidget {
               child: Center(child: Text("Hallo"))
             )
           ],
+        ),
         )
 
       )
