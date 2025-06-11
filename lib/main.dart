@@ -1,7 +1,8 @@
 import "package:flutter/material.dart";
+import "package:my_first_flutter/widgets/kotak_warna.dart";
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,57 +12,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('My First Flutter App' ,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+        appBar: AppBar(title: Text("My Application", style: TextStyle(color: Colors.white)), backgroundColor: Colors.blue),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              KotakWarna(text: "Merah", warna: Colors.red),
+              KotakWarna(text: "Kuning", warna: Colors.amber),
+              KotakWarna(text: "Biru", warna: Colors.blue),
+              KotakWarna(text: "Hijau", warna: Colors.green),
+              KotakWarna(text: "Ungu", warna: Colors.purple),
+              KotakWarna(text: "Coklat", warna: Colors.brown),
+              KotakWarna(text: "Hitam", warna: Colors.black),
+              KotakWarna(text: "Putih", warna: Colors.white),
+            ]
           ),
-          backgroundColor: Colors.blue,
         ),
-        body: GridView(
-          padding: EdgeInsets.only(
-            top: 20,
-            left: 20,
-            right: 20,
-            bottom: 20,
-          ),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 1/2,
-          ),
-          children: [
-            Container(
-              color: Colors.amber,
-            ),
-            Container(
-              color: Colors.red,
-            ),
-            Container(
-              color: Colors.blue,
-            ),
-            Container(
-              color: Colors.pink,
-            ),
-            Container(
-              color: Colors.amber,
-            ),
-            Container(
-              color: Colors.red,
-            ),
-            Container(
-              color: Colors.blue,
-            ),
-            Container(
-              color: Colors.pink,
-            ),
-            
-          ]
-        )
       )
     );
   }
 }
+
