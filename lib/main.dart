@@ -1,70 +1,59 @@
 import "package:flutter/material.dart";
 
-void main() {
+void main(){
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int nilai = 0;
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text("Counter App"), titleTextStyle: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-            backgroundColor: Colors.blue,
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(nilai.toString(),
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                )),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 20,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        nilai++;
-                        print(nilai);
-                        setState(() {
-                          
-                        });
-                      },
-                      child: Text("+",style: TextStyle(fontSize: 30)),
-                    ),
-                    SizedBox(width: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        nilai--;
-                        print(nilai);
-                        setState(() {
-                          
-                        });
-                      },
-                      child: Text("-",style: TextStyle(fontSize: 30)),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          )
-        )
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("AppBar", style: TextStyle(color: Colors.white)), 
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: (){
+            showDialog(
+              context: context, 
+              builder: (context) => AlertDialog(
+                title: Text("Ini Judul"),
+                content: Text("Ini adalah isi dari dialog yang ditampilkan. Anda dapat menambahkan lebih banyak informasi di sini."),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(), 
+                    child: Text("Tutup"),
+                  ),
+                  TextButton(
+                    onPressed: () => print("OK"), 
+                    child: Text("OK")
+                  )
+                ],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)
+                ),
+              )
+            );
+          }, 
+          child: Text("Show Dialog") 
+        ),
+      )
     );
   }
 }
