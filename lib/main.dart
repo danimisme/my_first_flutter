@@ -3,6 +3,7 @@ import "package:my_first_flutter/widgeds/soal_1.dart";
 import "package:my_first_flutter/widgeds/soal_10.dart";
 import "package:my_first_flutter/widgeds/soal_11.dart";
 import "package:my_first_flutter/widgeds/soal_12.dart";
+import "package:my_first_flutter/widgeds/soal_13.dart";
 import "package:my_first_flutter/widgeds/soal_2.dart";
 import "package:my_first_flutter/widgeds/soal_3.dart";
 import "package:my_first_flutter/widgeds/soal_4.dart";
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: soal_12()
+      home: soal_13()
     );
   }
 }
