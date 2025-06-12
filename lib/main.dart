@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -16,43 +16,44 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AppBar", style: TextStyle(color: Colors.white)), 
-        backgroundColor: Colors.blue,
+        title: Text("AppBar",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            )),
+            backgroundColor: Colors.blue,
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            showDialog(
-              context: context, 
-              builder: (context) => AlertDialog(
-                title: Text("Ini Judul"),
-                content: Text("Ini adalah isi dari dialog yang ditampilkan. Anda dapat menambahkan lebih banyak informasi di sini."),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.of(context).pop(), 
-                    child: Text("Tutup"),
-                  ),
-                  TextButton(
-                    onPressed: () => print("OK"), 
-                    child: Text("OK")
-                  )
-                ],
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Hello", style: TextStyle(color: Colors.black)),
+                action: SnackBarAction(
+                  label: "Close",
+                  textColor: Colors.red,
+                  onPressed: () {
+                    print("Tidak Jadi hapus");
+                  },
+                ),
+                backgroundColor: Colors.amber,
+                duration: Duration(milliseconds: 100),
+                margin: EdgeInsets.all(20),
+                behavior: SnackBarBehavior.floating,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
+                  borderRadius: BorderRadius.circular(20),
                 ),
               )
             );
           }, 
-          child: Text("Show Dialog") 
-        ),
+          child: Text("Show Snackbar"))
       )
     );
   }
