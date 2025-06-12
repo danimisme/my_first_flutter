@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:my_first_flutter/widgeds/soal_1.dart";
+import "package:my_first_flutter/widgeds/soal_10.dart";
 import "package:my_first_flutter/widgeds/soal_2.dart";
 import "package:my_first_flutter/widgeds/soal_3.dart";
 import "package:my_first_flutter/widgeds/soal_4.dart";
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: soal_9()
+      home: soal_10()
     );
   }
 }
