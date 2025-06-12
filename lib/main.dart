@@ -1,42 +1,70 @@
 import "package:flutter/material.dart";
-import "package:my_first_flutter/widgeds/soal_1.dart";
-import "package:my_first_flutter/widgeds/soal_10.dart";
-import "package:my_first_flutter/widgeds/soal_11.dart";
-import "package:my_first_flutter/widgeds/soal_12.dart";
-import "package:my_first_flutter/widgeds/soal_13.dart";
-import "package:my_first_flutter/widgeds/soal_14.dart";
-import "package:my_first_flutter/widgeds/soal_15.dart";
-import "package:my_first_flutter/widgeds/soal_16.dart";
-import "package:my_first_flutter/widgeds/soal_17.dart";
-import "package:my_first_flutter/widgeds/soal_18.dart";
-import "package:my_first_flutter/widgeds/soal_19.dart";
-import "package:my_first_flutter/widgeds/soal_2.dart";
-import "package:my_first_flutter/widgeds/soal_20.dart";
-import "package:my_first_flutter/widgeds/soal_21.dart";
-import "package:my_first_flutter/widgeds/soal_22.dart";
-import "package:my_first_flutter/widgeds/soal_23.dart";
-import "package:my_first_flutter/widgeds/soal_24.dart";
-import "package:my_first_flutter/widgeds/soal_3.dart";
-import "package:my_first_flutter/widgeds/soal_4.dart";
-import "package:my_first_flutter/widgeds/soal_5.dart";
-import "package:my_first_flutter/widgeds/soal_6.dart";
-import "package:my_first_flutter/widgeds/soal_7.dart";
-import "package:my_first_flutter/widgeds/soal_8.dart";
-import "package:my_first_flutter/widgeds/soal_9.dart";
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int nilai = 0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: soal_24()
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Counter App"), titleTextStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+            backgroundColor: Colors.blue,
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(nilai.toString(),
+                style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                )),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 20,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        nilai++;
+                        print(nilai);
+                        setState(() {
+                          
+                        });
+                      },
+                      child: Text("+",style: TextStyle(fontSize: 30)),
+                    ),
+                    SizedBox(width: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        nilai--;
+                        print(nilai);
+                        setState(() {
+                          
+                        });
+                      },
+                      child: Text("-",style: TextStyle(fontSize: 30)),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        )
     );
   }
 }
-
