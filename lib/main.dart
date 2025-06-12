@@ -25,6 +25,16 @@ class MyApp extends StatelessWidget {
             IconButton(onPressed: (){print("Klik more");}, icon: Icon(Icons.more_vert , color: Colors.white)),
           ],
         ),
+        body: Center(
+          child: Text(
+            "Hello World",
+            style: TextStyle(
+              fontSize: 50,
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+            )
+          ),
+        )
       )
     );
   }
